@@ -51,5 +51,5 @@ def main(url, input_string, n, filename):
 if __name__ == '__main__':
     letters = 'qyipjzxcvn'
     url = 'https://www-cs-faculty.stanford.edu/~knuth/sgb-words.txt'
-    filename = "/Volumes/T7/Code/log.txt"
+    filename = "/log.txt"
     main(url=url, input_string=letters, n=5, filename=filename)
