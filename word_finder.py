@@ -42,14 +42,14 @@ def main(url, input_string, n, filename):
     words_from_choice = np.array(
         find_word.run_combinations(iterator=letters, n=5))
     final_words = np.intersect1d(words_from_choice, words_from_website)
-    words_containing_i = [v for i, v in enumerate(
-        final_words) if "i" in v if "c" in v]
+    # words_containing_i = [v for i, v in enumerate(
+    #     final_words) if args[0] in v if args[1] in v]
     lg.info("final list of words for use")
-    return print("words_containing_i", words_containing_i)
+    return print("matched words", final_words)
 
 
 if __name__ == '__main__':
-    letters = 'qyipjzxcvn'
+    letters = 'szlmawtue'
     url = 'https://www-cs-faculty.stanford.edu/~knuth/sgb-words.txt'
     filename = "/log.txt"
     main(url=url, input_string=letters, n=5, filename=filename)
