@@ -30,7 +30,7 @@ class word_finder:
 
     def run_combinations(self, iterator, n):
         list1 = list()
-        for i in itertools.combinations(self.iterator, self.n):
+        for i in itertools.product(self.iterator, repeat = self.n):
             list1.append(''.join(i))
         lg.info("list containing different permutation of words")
         return list1
@@ -42,14 +42,12 @@ def main(url, input_string, n, filename):
     words_from_choice = np.array(
         find_word.run_combinations(iterator=letters, n=5))
     final_words = np.intersect1d(words_from_choice, words_from_website)
-    # words_containing_i = [v for i, v in enumerate(
-    #     final_words) if args[0] in v if args[1] in v]
     lg.info("final list of words for use")
     return print("matched words", final_words)
 
 
 if __name__ == '__main__':
-    letters = 'szlmawtue'
+    letters = ['q','w','y','i','p','d','f','h','j','z','x','c','v','b','n','m']
     url = 'https://www-cs-faculty.stanford.edu/~knuth/sgb-words.txt'
     filename = "/log.txt"
     main(url=url, input_string=letters, n=5, filename=filename)
